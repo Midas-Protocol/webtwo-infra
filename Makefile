@@ -50,6 +50,14 @@ nosudo:
 # DEPLOY
 # -------------------------------------------------------------------
 
+plan:
+	export TF_VAR_ethereum_admin_account=${ETHEREUM_ADMIN_ACCOUNT} && \
+	export TF_VAR_ethereum_admin_private_key=${ETHEREUM_ADMIN_PRIVATE_KEY} && \
+	cd config && \
+	terraform init && \
+	terraform plan
+
+
 deploy:
 	export TF_VAR_ethereum_admin_account=${ETHEREUM_ADMIN_ACCOUNT} && \
 	export TF_VAR_ethereum_admin_private_key=${ETHEREUM_ADMIN_PRIVATE_KEY} && \
