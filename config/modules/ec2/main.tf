@@ -39,34 +39,9 @@ resource "aws_autoscaling_group" "default" {
   min_size             = 1
   name                 = "auto-scaling-group"
   termination_policies = ["OldestInstance"]
-  vpc_zone_identifier  = var.subnet_ids
 
   lifecycle {
     create_before_destroy = true
   }
 }
 
-#
-#resource "aws_instance" "ec2_instance" {
-#  ami                    = data.aws_ami
-#  subnet_id              = var.subnet_id
-#  iam_instance_profile   = var.iam_instance_profile
-#  instance_type          = var.instance_type
-#  vpc_security_group_ids = var.vpc_security_group_ids
-#  key_name               = var.key_name
-#  ebs_optimized          = false
-#  source_dest_check      = false
-#  user_data              = data.template_file.user_data.rendered
-#
-#  tags = {
-#    Chain                   = var.chain
-#  }
-#
-#  lifecycle {
-#    ignore_changes         = ["ami", "user_data", "subnet_id", "key_name", "ebs_optimized", "private_ip"]
-#  }
-#}
-#
-#data "template_file" "user_data" {
-#  template = file("${path.module}/user_data.tpl")
-#}
