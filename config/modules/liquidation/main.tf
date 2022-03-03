@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_group" "container" {
-  name = var.container_family
+  name = "${var.container_family}-${var.chain_id}"
 }
 
 resource "aws_ecs_task_definition" "service" {

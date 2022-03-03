@@ -1,10 +1,6 @@
 variable "execution_role_arn" {}
 variable "cluster_id" {}
-variable "vpc_id" {}
 
-variable "public_subnets" {
-  type = list(string)
-}
 
 variable "docker_image" {}
 
