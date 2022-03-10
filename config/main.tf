@@ -17,7 +17,7 @@ module "bsc_testnet_twap_bot" {
   allow_all_sg               = module.network.allow_all_sg
   execution_role_arn         = module.ecr.execution_role_arn
   cluster_id                 = module.ecs.ecs_cluster_id
-  docker_image               = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-b7dcb7827abad649e8c2dcc492418e34f18e68ec"
+  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:sha-dfea07fa6f16a98014dce25ab75363a2be9d0db7"
   container_family           = "twap"
   chain_id                   = "97"
   cpu                        = 128
