@@ -11,6 +11,26 @@ provider "aws" {
 }
 
 
+module "bsc_testnet_twap_bot" {
+  source                     = "./modules/twap"
+  ecs_cluster_sg             = module.network.ecs_task_sg
+  allow_all_sg               = module.network.allow_all_sg
+  execution_role_arn         = module.ecr.execution_role_arn
+  cluster_id                 = module.ecs.ecs_cluster_id
+  docker_image               = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-b7dcb7827abad649e8c2dcc492418e34f18e68ec"
+  container_family           = "twap"
+  chain_id                   = "97"
+  cpu                        = 128
+  memory                     = 64
+  instance_count             = 1
+  timeout                    = 180
+  ethereum_admin_account     = var.ethereum_admin_account
+  ethereum_admin_private_key = var.ethereum_admin_private_key
+  supported_pairs            = "0x575cb459b6e6b8187d3ef9a25105d64011874820|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x0ccF78E575af2dCFF6E96135A06e0A45Ff45F7E8|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x012d9cEB1aaE02d31f5665275175Bd8A7c55CDd2|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd"
+  web3_provider_url          = "https://data-seed-prebsc-1-s1.binance.org:8545"
+}
+
+
 module "bsc_testnet_liquidation_bot" {
   source                      = "./modules/liquidation"
   ecs_cluster_sg              = module.network.ecs_task_sg
