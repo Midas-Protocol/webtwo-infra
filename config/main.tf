@@ -31,23 +31,23 @@ module "bsc_testnet_twap_bot" {
 }
 
 
-module "bsc_testnet_liquidation_bot" {
+module "bsc_mainnet_liquidation_bot" {
   source                      = "./modules/liquidation"
   ecs_cluster_sg              = module.network.ecs_task_sg
   allow_all_sg                = module.network.allow_all_sg
   execution_role_arn          = module.ecr.execution_role_arn
   cluster_id                  = module.ecs.ecs_cluster_id
-  docker_image                = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-b7dcb7827abad649e8c2dcc492418e34f18e68ec"
+  docker_image                = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-3f8dd486528e2c822b8349720c769ed899429edd"
   container_family            = "liquidation"
-  chain_id                    = "97"
+  chain_id                    = "56"
   cpu                         = 128
   memory                      = 64
   instance_count              = 1
   timeout                     = 180
   ethereum_admin_account      = var.ethereum_admin_account
   ethereum_admin_private_key  = var.ethereum_admin_private_key
-  supported_input_currencies  = "0x0000000000000000000000000000000000000000,0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867"
-  supported_output_currencies = "0x0000000000000000000000000000000000000000,0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867"
+  supported_input_currencies  = "0x0000000000000000000000000000000000000000,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  supported_output_currencies = "0x0000000000000000000000000000000000000000,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56,0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
   web3_provider_url           = "https://data-seed-prebsc-1-s1.binance.org:8545"
 }
 
