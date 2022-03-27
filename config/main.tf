@@ -10,6 +10,25 @@ provider "aws" {
   region = var.region
 }
 
+module "bsc_mainnet_twap_bot" {
+  source                     = "./modules/twap"
+  ecs_cluster_sg             = module.network.ecs_task_sg
+  allow_all_sg               = module.network.allow_all_sg
+  execution_role_arn         = module.ecr.execution_role_arn
+  cluster_id                 = module.ecs.ecs_cluster_id
+  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:sha-f506cec37be4e90785633547798f1a3fa1dae482"
+  container_family           = "twap"
+  chain_id                   = "56"
+  cpu                        = 128
+  memory                     = 64
+  instance_count             = 1
+  timeout                    = 180
+  ethereum_admin_account     = var.ethereum_admin_account
+  ethereum_admin_private_key = var.ethereum_admin_private_key
+  supported_pairs            = "0x522348779DCb2911539e76A1042aA922F9C47Ee3|0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c,0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082|0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  web3_provider_url          = var.bsc_mainnet_provider_url
+}
+
 
 module "bsc_testnet_twap_bot" {
   source                     = "./modules/twap"
