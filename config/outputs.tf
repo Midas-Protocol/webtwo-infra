@@ -3,7 +3,7 @@ output "ecs-cluster" {
 }
 
 output "bsc-testnet-liquidation-bot" {
-  value = module.bsc_testnet_liquidation_bot.service_name
+  value = module.bsc_mainnet_liquidation_bot.service_name
 }
 
 output "evmos-testnet-liquidation-bot" {
