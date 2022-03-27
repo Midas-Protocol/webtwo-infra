@@ -25,7 +25,7 @@ module "bsc_mainnet_twap_bot" {
   timeout                    = 180
   ethereum_admin_account     = var.ethereum_admin_account
   ethereum_admin_private_key = var.ethereum_admin_private_key
-  supported_pairs            = "0x522348779DCb2911539e76A1042aA922F9C47Ee3|0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c,0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082|0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  supported_pairs            = "0x84392649eb0bC1c1532F2180E58Bae4E1dAbd8D6|0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c,0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082|0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
   web3_provider_url          = var.bsc_mainnet_provider_url
 }
 
