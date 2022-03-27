@@ -61,7 +61,7 @@ plan:
 deploy:
 	export TF_VAR_ethereum_admin_account=${ETHEREUM_ADMIN_ACCOUNT} && \
 	export TF_VAR_ethereum_admin_private_key=${ETHEREUM_ADMIN_PRIVATE_KEY} && \
-	export TF_VAR_bsc_provider_url=${BSC_MAINNET_PROVIDER_URL} && \
+	export TF_VAR_bsc_mainnet_provider_url=${BSC_MAINNET_PROVIDER_URL} && \
 	cd config && \
 	terraform init && \
 	terraform apply -auto-approve
