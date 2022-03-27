@@ -47,7 +47,7 @@ module "bsc_mainnet_liquidation_bot" {
   ethereum_admin_account      = var.ethereum_admin_account
   ethereum_admin_private_key  = var.ethereum_admin_private_key
   supported_input_currencies  = "0x0000000000000000000000000000000000000000,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
-  supported_output_currencies = "0x0000000000000000000000000000000000000000,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56,0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+  supported_output_currencies = "0x0000000000000000000000000000000000000000,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56,0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c"
   web3_provider_url           = "https://data-seed-prebsc-1-s1.binance.org:8545"
 }
 
