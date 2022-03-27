@@ -24,4 +24,5 @@ jobs:
         env:
           ETHEREUM_ADMIN_ACCOUNT: "${{ secrets.ETHEREUM_ADMIN_ACCOUNT }}"
           ETHEREUM_ADMIN_PRIVATE_KEY: "${{ secrets.ETHEREUM_ADMIN_PRIVATE_KEY }}"
+          BSC_MAINNET_PROVIDER_URL: "${{ secrets.BSC_MAINNET_PROVIDER_URL }}"
         run: make deploy

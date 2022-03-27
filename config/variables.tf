@@ -16,3 +16,7 @@ variable "ethereum_admin_account" {
 variable "ethereum_admin_private_key" {
   type = string
 }
+
+variable "bsc_mainnet_provider_url" {
+  type = string
+}
