@@ -16,7 +16,7 @@ module "bsc_mainnet_twap_bot" {
   allow_all_sg               = module.network.allow_all_sg
   execution_role_arn         = module.ecr.execution_role_arn
   cluster_id                 = module.ecs.ecs_cluster_id
-  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:sha-f506cec37be4e90785633547798f1a3fa1dae482"
+  docker_image               = var.twap_bot_image
   container_family           = "twap"
   chain_id                   = "56"
   cpu                        = 128
@@ -36,7 +36,7 @@ module "bsc_testnet_twap_bot" {
   allow_all_sg               = module.network.allow_all_sg
   execution_role_arn         = module.ecr.execution_role_arn
   cluster_id                 = module.ecs.ecs_cluster_id
-  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:sha-f506cec37be4e90785633547798f1a3fa1dae482"
+  docker_image               = var.twap_bot_image
   container_family           = "twap"
   chain_id                   = "97"
   cpu                        = 128
@@ -45,7 +45,7 @@ module "bsc_testnet_twap_bot" {
   timeout                    = 180
   ethereum_admin_account     = var.ethereum_admin_account
   ethereum_admin_private_key = var.ethereum_admin_private_key
-  supported_pairs            = "0x575cb459b6e6b8187d3ef9a25105d64011874820|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x0ccF78E575af2dCFF6E96135A06e0A45Ff45F7E8|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x012d9cEB1aaE02d31f5665275175Bd8A7c55CDd2|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd"
+  supported_pairs            = "0x575cb459b6e6b8187d3ef9a25105d64011874820|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x4D6F42B822A6Dff31e54f4FC1EEEffD5Ed8830Dd|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x012d9cEB1aaE02d31f5665275175Bd8A7c55CDd2|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x87F623e5Aa3dC1406598F311369549aE12ccfe84|0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378"
   web3_provider_url          = "https://data-seed-prebsc-1-s1.binance.org:8545"
 }
 
@@ -56,7 +56,7 @@ module "bsc_mainnet_liquidation_bot" {
   allow_all_sg                = module.network.allow_all_sg
   execution_role_arn          = module.ecr.execution_role_arn
   cluster_id                  = module.ecs.ecs_cluster_id
-  docker_image                = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-3f8dd486528e2c822b8349720c769ed899429edd"
+  docker_image                = var.liquidator_bot_image
   container_family            = "liquidation"
   chain_id                    = "56"
   cpu                         = 128
@@ -77,7 +77,7 @@ module "evmos_testnet_liquidation_bot" {
   allow_all_sg                = module.network.allow_all_sg
   execution_role_arn          = module.ecr.execution_role_arn
   cluster_id                  = module.ecs.ecs_cluster_id
-  docker_image                = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-b7dcb7827abad649e8c2dcc492418e34f18e68ec"
+  docker_image                = var.liquidator_bot_image
   container_family            = "liquidation"
   chain_id                    = "9000"
   cpu                         = 128
