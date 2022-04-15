@@ -88,7 +88,7 @@ module "evmos_testnet_liquidation_bot" {
   ethereum_admin_private_key  = var.ethereum_admin_private_key
   supported_input_currencies  = "0x0000000000000000000000000000000000000000,0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867"
   supported_output_currencies = "0x0000000000000000000000000000000000000000,0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867"
-  web3_provider_url           = "https://evmos-archive-testnet.api.bdnodes.net:8545"
+  web3_provider_url           = "https://eth.bd.evmos.dev:8545"
 }
 
 
