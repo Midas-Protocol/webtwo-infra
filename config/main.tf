@@ -25,7 +25,7 @@ module "bsc_mainnet_twap_bot" {
   timeout                    = 180
   ethereum_admin_account     = var.ethereum_admin_account
   ethereum_admin_private_key = var.ethereum_admin_private_key
-  supported_pairs            = "0x84392649eb0bC1c1532F2180E58Bae4E1dAbd8D6|0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c,0x61EB789d75A95CAa3fF50ed7E47b96c132fEc082|0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+  supported_pairs            = "0x84392649eb0bC1c1532F2180E58Bae4E1dAbd8D6|0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c"
   web3_provider_url          = var.bsc_mainnet_provider_url
 }
 
@@ -45,7 +45,7 @@ module "bsc_testnet_twap_bot" {
   timeout                    = 180
   ethereum_admin_account     = var.ethereum_admin_account
   ethereum_admin_private_key = var.ethereum_admin_private_key
-  supported_pairs            = "0x575cb459b6e6b8187d3ef9a25105d64011874820|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x4D6F42B822A6Dff31e54f4FC1EEEffD5Ed8830Dd|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x012d9cEB1aaE02d31f5665275175Bd8A7c55CDd2|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x87F623e5Aa3dC1406598F311369549aE12ccfe84|0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378"
+  supported_pairs            = "0xAE4C99935B1AA0e76900e86cD155BFA63aB77A2a|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x3129B45b375a11Abf010D2D10DB1E3DcF474A13c|0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd,0x5126C1B8b4368c6F07292932451230Ba53a6eB7A|0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7"
   web3_provider_url          = "https://data-seed-prebsc-1-s1.binance.org:8545"
 }
 

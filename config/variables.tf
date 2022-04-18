@@ -23,10 +23,10 @@ variable "bsc_mainnet_provider_url" {
 
 variable "twap_bot_image" {
   type    = string
-  default = "ghcr.io/midas-protocol/fuse-twap-bot:sha-3431e6accce0369f9fe9c81902f50155d858c44c"
+  default = "ghcr.io/midas-protocol/fuse-twap-bot:sha-60edebb031976553c3c567d5c6d4a73a8af83365"
 }
 
 variable "liquidator_bot_image" {
   type    = string
-  default = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-bdb94d4d11b987820f44222c7b882006b0ab575a"
+  default = "ghcr.io/midas-protocol/fuse-liquidator-bot:sha-17c98bc487626915dc4e3ce033f0ca919fb4d525"
 }
