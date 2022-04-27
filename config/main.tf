@@ -29,6 +29,24 @@ module "bsc_mainnet_twap_bot" {
   web3_provider_url          = var.bsc_mainnet_provider_url
 }
 
+module "moonbeam_mainnet_twap_bot" {
+  source                     = "./modules/twap"
+  ecs_cluster_sg             = module.network.ecs_task_sg
+  allow_all_sg               = module.network.allow_all_sg
+  execution_role_arn         = module.ecr.execution_role_arn
+  cluster_id                 = module.ecs.ecs_cluster_id
+  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:<sha:commit-hash>"
+  container_family           = "twap"
+  chain_id                   = "1284"
+  cpu                        = 128
+  memory                     = 64
+  instance_count             = 1
+  timeout                    = 180
+  ethereum_admin_account     = var.ethereum_admin_account
+  ethereum_admin_private_key = var.ethereum_admin_private_key
+  supported_pairs            = "0x99588867e817023162F4d4829995299054a5fC57|0xAcc15dC74880C9944775448304B263D191c6077F"
+  web3_provider_url          = "https://rpc.api.moonbeam.network"
+}
 
 module "bsc_testnet_twap_bot" {
   source                     = "./modules/twap"
