@@ -35,7 +35,7 @@ module "moonbeam_mainnet_twap_bot" {
   allow_all_sg               = module.network.allow_all_sg
   execution_role_arn         = module.ecr.execution_role_arn
   cluster_id                 = module.ecs.ecs_cluster_id
-  docker_image               = "ghcr.io/midas-protocol/fuse-twap-bot:<sha:commit-hash>"
+  docker_image               = var.twap_bot_image
   container_family           = "twap"
   chain_id                   = "1284"
   cpu                        = 128
