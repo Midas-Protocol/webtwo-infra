@@ -1,3 +1,5 @@
+# DEPRECATED => moved to monorepo/packages/ui
+
 # Web 2 Infra: AWS Resources
 
 Repository for all AWS resources related to Midas Capital. These are mainly comprised of liquidation bots and TWAP bots,
